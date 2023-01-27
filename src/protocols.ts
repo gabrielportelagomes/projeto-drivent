@@ -9,7 +9,6 @@ export type ViaCEPAddress = {
   bairro: string,
   localidade: string,
   uf: string,
-
 };
 
 export type AddressEnrollment = {
@@ -51,4 +50,25 @@ export type TicketReturn = {
   },
   createdAt: Date,
   updatedAt: Date,
+};
+
+export type CreatePayment =  {
+  ticketId: number,
+	cardData: {
+		issuer: string,
+    number: number,
+    name: string,
+    expirationDate: Date,
+    cvv: number
+	}
+};
+
+export type Payment =  {
+    id: number,
+    ticketId: number,
+    value: number,
+    cardIssuer: string,
+    cardLastDigits: string,
+    createdAt: Date,
+    updatedAt: Date,
 };
